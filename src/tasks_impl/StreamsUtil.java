@@ -29,9 +29,9 @@ public class StreamsUtil {
                 .toString();
     }
 
-    public static Stream<Long> generateLongRandom(long seed, long a, long c, double m) {
+    public static Stream<Long> generateLongRandom(long a, long c, double m) {
         // According to the task we don`t need limit, but I added it to see the result of the stream
-        return Stream.iterate(seed, i -> (long) ((a * i) + c % m))
+        return Stream.iterate(0L, i -> (long) ((a * i) + c % m))
                 .limit(10);
     }
 
